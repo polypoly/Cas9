@@ -1,7 +1,8 @@
 ## SeqAlign2
-### Shiny app for multiple sequence alignment using the msa package from bioconductor.
+### Shiny app for multiple sequence alignment using the msa package from Bioconductor.
 
-You could run the SeqAlign2.R from R studio and view it from your default web browser.
+You could run the SeqAlign2.R from R studio and view it from your default web browser. This shiny app requires the following libraries: 
+shiny, Biostrings, msa, dplyr
 
 You could use this tool to find if your CRISPR/Cas9 transgenic lines contain targeted mutations, or use it to check if your plasmids contain the sequence you want.
 
@@ -9,7 +10,7 @@ For CRISPR/Cas9 transgenic lines, we suggest designing your sequencing primers t
 
 The biallelic sequences could also be observed in sequencing chromatograms (usually saved in .ab1 format).  
 
-The user interface is self-explanatory. You would need to input the target sequence. Just copy and paste from MS word or excel sheet. You can select if the target sequence needs to be reversed and complemented. Then you can use "Choose files" to select .seq files from a proper directory. Alternatively, you can also drag multiple .seq files directly onto the "Choose files" button. Next, you can select which range of DNA sequences you would like to use. The reason to do this is to remove low-quality nucleotides that usually are located at the two ends. The next step is to give the output file a name. The default name is SeqInfo. Please give a meanful name for your output file. In the Shiny main panel, you can see whether the target sequence exists in the DNA sequences. In fact, the main panel info is exactly the same as the CSV file that you can download.
+The user interface is self-explanatory. You would need to input the target sequence. Just copy and paste from MS word or excel sheet. You can select if the target sequence needs to be reversed and complemented. Then you can use "Choose files" to select .seq files from a proper directory. Alternatively, you can also drag multiple .seq files directly onto the "Choose files" button. Next, you can select which range of DNA sequences you would like to use. The reason to do this is to remove low-quality nucleotides that usually are located at the two ends. The next step is to give the output file a name. The default name is SeqInfo. Please give a meaningful name for your output file. In the Shiny main panel, you can see whether the target sequence exists in the DNA sequences. In fact, the main panel info is the same as the CSV file that you can download.
 
 ## Output files:
 You can download the pdf and CSV files.  
