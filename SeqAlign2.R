@@ -20,12 +20,14 @@ ui <- fluidPage(
                 accept='.seq'),
       # We want to remove some low quality sequences.
       # helpText("Since the beginning and end of Sanger sequencing is messy, we want to chop these nucleotides out."),
-      helpText("Chop first 49th nt and after 450nt to remove low quality sequences. Usually your target sequences should be located within this region"),
+      helpText("To remove low quality sequence, we chop first 49th nt and after 450nt to remove low quality sequences. Usually your target sequences should be located within this region. You can change the default setting here."),
       numericInput("start","Choose where to start",value=50,step=1),
       numericInput("stop","Choose where to start",value=450,step=1),
       # Give the file a name.
       textInput("seqName","File name",value = "SeqInfo"),
-      
+      #
+      selectInput("order", "Order of alignment in PDF",
+                  choices = c("aligned", "input")),
       # Download CSV files.
       downloadButton('downloadData', 'DownloadCSV'),
       # Download the pdf with multiple sequence alignment.
@@ -96,7 +98,7 @@ server <- function(input, output) {
        
        # Generate multiple sequence alignment.
        msaPrettyPrint(
-         msa(DNAStringSet(DNA),order="input")
+         msa(DNAStringSet(DNA),order=input$order)
          , file = 'report.pdf'
          , output="pdf"
          , showNames="left"
