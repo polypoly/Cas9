@@ -47,18 +47,20 @@ server <- function(input, output) {
     } else {
       inFile %>%
         rowwise() %>%
-        
         do({
-          DNASeq <- substring(readChar(.$datapath,nchar=input$stop),input$start)
+          DNASeq <- readChar(.$datapath,nchar=800)
+          DNASeq <- gsub("[[:space:]]", "", DNASeq)
+          DNASeq <- substring(DNASeq,first=input$start,last=input$stop)
+
           newtext <- if(input$rev) {
-            reverseComplement(DNAString(input$text))
+            reverseComplement(DNAString(toupper(gsub("[[:space:]]", "", input$text))))
           }
           else {
-            newtext <- input$text 
+            newtext <- toupper(gsub("[[:space:]]", "", input$text))
           }
           ContainT <- ifelse(grepl(newtext, DNASeq), TRUE, FALSE)
           DNASeqDF <- data.frame(.$name,nchar(DNASeq),ContainT,DNASeq,stringsAsFactors =F)
-          colnames(DNASeqDF)=c("Name","nchar","Contains target string","DNA strings")
+          colnames(DNASeqDF)=c("Name","Length","Contains target string","DNA strings")
           DNASeqDF
         })
     }
@@ -83,17 +85,16 @@ server <- function(input, output) {
      content = function(file) {
        # First check if we need to reverse complement of the target sequence.
        newtext <- if(input$rev) {
-         reverseComplement(DNAString(input$text))
+         reverseComplement(DNAString(toupper(gsub("[[:space:]]", "", input$text))))
        }
        else {
-         newtext <- input$text 
+         newtext <- toupper(gsub("[[:space:]]", "", input$text))
        }
        
        # Make the datasetInput a dataframe and add the target sequence to make a DNAStringSet. 
        df<-as.data.frame(datasetInput())
        DNA <- c(df[,4],newtext)
        names(DNA) <- c(df[,1],"Target Sequence")
-       DNA <- unlist(DNA)
        
        # Generate multiple sequence alignment.
        msaPrettyPrint(
@@ -107,7 +108,7 @@ server <- function(input, output) {
          , askForOverwrite=FALSE)
        file.rename("report.pdf",file)
      },
-     contentType = 'application/pdf'
+     contentType = 'application/pdf' 
    )
   #you can look up the temdir with the following code
   #print(tempdir())
