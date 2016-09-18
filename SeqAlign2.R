@@ -115,4 +115,4 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 
 # For the example DNA sequences use:
-# GTGTGTTATCGCGTCTTGTCGAAC
+# GTTATCGCGTCTTGTCGAAC
