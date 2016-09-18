@@ -20,7 +20,7 @@ ui <- fluidPage(
                 accept='.seq'),
       # We want to remove some low quality sequences.
       # helpText("Since the beginning and end of Sanger sequencing is messy, we want to chop these nucleotides out."),
-      helpText("To remove low quality sequence, we chop first 49th nt and after 450nt to remove low quality sequences. Usually your target sequences should be located within this region. You can change the default setting here."),
+      helpText("You can chop the nucleotides at two ends to remove low quality reads."),
       numericInput("start","Choose where to start",value=50,step=1),
       numericInput("stop","Choose where to start",value=450,step=1),
       # Give the file a name.
