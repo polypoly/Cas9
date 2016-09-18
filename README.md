@@ -3,7 +3,7 @@
 
 You can run the SeqAlign2.R from R console or R studio.
 
-You can use this tool to find if our CRISPR/Cas9 transgenic lines contain targeted mutations, or use it to check if your plasmids contain the sequence you want.
+You can use this tool to find if your CRISPR/Cas9 transgenic lines contain targeted mutations, or use it to check if your plasmids contain the sequence you want.
 
 For CRISPR/Cas9 transgenic lines, we suggest designing your sequence primers to have the same directionality as the target sequence. The reason is related to the biallelic nature of Cas9 mutants. It would need some time to explain. Please just do so. 
 
