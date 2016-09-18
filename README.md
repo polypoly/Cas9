@@ -15,6 +15,7 @@ The biallelic sequences could also be observed in sequencing chromatograms (usua
     2. You can use "Choose files" to select .seq files from a proper directory. Alternatively, you can also drag multiple .seq files directly onto the "Choose files" button.  
     3. You can select which range of DNA sequences you would like to use. The reason to do this is to remove low-quality nucleotides that usually are located at the two ends.  
     4. The next step is to give the output file a name. The default name is SeqInfo. Please give a meaningful name for your output file. In the Shiny main panel, you can see whether the target sequence exists in the DNA sequences. In fact, the main panel info is the same as the CSV file that you can download.
+    5. Select how the multiple sequence alignment would be arranged. "aligned" means the multiple sequence alignment would be arranged according to alignment. "input" means the multiple sequence alignment will be arranged according to the input and the target sequence is always at the bottom of the alignment. 
 
 ## Output files:
 You can download the pdf and CSV files.  
