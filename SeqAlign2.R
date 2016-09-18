@@ -22,14 +22,14 @@ ui <- fluidPage(
       # Chick if you want reverse complement for the target sequence.
       checkboxInput("rev","Reverse complement", value = FALSE),
       # Input file, call it file1. Use "multiple = TRUE" to allow taking multiple files. Use "accept='.seq'" means we only take .seq file, which is the standard Sanger sequencing file containing only DNA strings.
-      helpText("Input .seq files below."),
+      helpText("Drag .seq files to here."),
       fileInput("file1",
                 "Choose seq files from directory",
                 multiple = TRUE,
                 accept='.seq'),
       # We want to remove some low quality sequences.
       # helpText("Since the beginning and end of Sanger sequencing is messy, we want to chop these nucleotides out."),
-      helpText("You can chop the nucleotides at two ends to remove low quality reads."),
+      helpText("Chop the low quality nucleotides at two ends."),
       numericInput("start","Choose where to start",value=50,step=10),
       numericInput("stop","Choose where to stop",value=450,step=10),
       # Give the file a name.
