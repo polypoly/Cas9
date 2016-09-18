@@ -1,5 +1,5 @@
 ## SeqAlign2
-# Shiny app for multiple sequence alignment.
+### Shiny app for multiple sequence alignment.
 
 You can just run the SeqAlign2.R from R console or R studio.
 
@@ -17,7 +17,7 @@ You can download the pdf and CSV files.
     4. DNA sequences employed in the study.
   * The pdf file contains the MSA plot.
 
-# Example:
+## Example:
 For target sequence, use CGCGTCTTGTCGAACGAAGCCT.
 For example DNA sequences, find them in the test.zip folder
 The output should be identical to the SeqInfo.pdf and SeqInfo.R files in this repository. 
