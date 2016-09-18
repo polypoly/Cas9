@@ -6,6 +6,7 @@ library(dplyr)
 # Analyzing if several sequences contain the target sequence.
 # This one can upload files, analyze it and download the result.
 
+# Starting the ui function
 ui <- fluidPage(
     sidebarPanel(
       helpText("Input target sequence below."),
@@ -37,9 +38,10 @@ ui <- fluidPage(
     )
   )
 
-
+# Starting the server function
 server <- function(input, output) {
-  # Read in the target sequence.
+  
+  # Read in the target sequence as targetInput().
   targetInput <- reactive({
     # First check if we need to reverse complement of the target sequence.
     newtext <- if(input$rev) {
@@ -50,7 +52,7 @@ server <- function(input, output) {
     }
   })
   
-  # Read the data files (many input DNA sequences) in and make a data frame.
+  # Read the data files (many input DNA sequences) in and make a data frame as datasetInput().
   datasetInput <- reactive({
     inFile <- input$file1
     if (is.null(inFile)) {
@@ -106,11 +108,11 @@ server <- function(input, output) {
      },
      contentType = 'application/pdf' 
    )
-  #you can look up the temdir with the following code
+  # You can look up the temdir with the following code
   #print(tempdir())
 }
 
 shinyApp(ui = ui, server = server)
 
-#For the example DNA sequences use:
+# For the example DNA sequences use:
 # GTGTGTTATCGCGTCTTGTCGAAC
