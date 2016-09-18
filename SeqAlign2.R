@@ -21,8 +21,8 @@ ui <- fluidPage(
       # We want to remove some low quality sequences.
       # helpText("Since the beginning and end of Sanger sequencing is messy, we want to chop these nucleotides out."),
       helpText("You can chop the nucleotides at two ends to remove low quality reads."),
-      numericInput("start","Choose where to start",value=50,step=1),
-      numericInput("stop","Choose where to start",value=450,step=1),
+      numericInput("start","Choose where to start",value=50,step=10),
+      numericInput("stop","Choose where to stop",value=450,step=10),
       # Give the file a name.
       textInput("seqName","File name",value = "SeqInfo"),
       #
@@ -89,7 +89,7 @@ server <- function(input, output) {
   # Here we build the pdf file for multiple sequence alignmnet.
   output$downloadPDF = downloadHandler(
     # DownloadHandler needs two arguments: filename and content.
-     filename = paste0(input$seqName,'.pdf'),
+     filename = function() {paste0(input$seqName,'.pdf')},
      content = function(file) {
        # Make the datasetInput a dataframe and add the target sequence to make a DNAStringSet. 
        df<-as.data.frame(datasetInput())
