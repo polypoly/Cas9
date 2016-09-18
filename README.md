@@ -10,7 +10,11 @@ For CRISPR/Cas9 transgenic lines, we suggest designing your sequencing primers t
 
 The biallelic sequences could also be observed in sequencing chromatograms (usually saved in .ab1 format).  
 
-The user interface is self-explanatory. You would need to input the target sequence. Just copy and paste from MS word or excel sheet. You can select if the target sequence needs to be reversed and complemented. Then you can use "Choose files" to select .seq files from a proper directory. Alternatively, you can also drag multiple .seq files directly onto the "Choose files" button. Next, you can select which range of DNA sequences you would like to use. The reason to do this is to remove low-quality nucleotides that usually are located at the two ends. The next step is to give the output file a name. The default name is SeqInfo. Please give a meaningful name for your output file. In the Shiny main panel, you can see whether the target sequence exists in the DNA sequences. In fact, the main panel info is the same as the CSV file that you can download.
+The user interface is self-explanatory.  
+1: You would need to input the target sequence. Just copy and paste from MS word or excel sheet. You can select if the target sequence needs to be reversed and complemented.
+2: You can use "Choose files" to select .seq files from a proper directory. Alternatively, you can also drag multiple .seq files directly onto the "Choose files" button.  
+3: You can select which range of DNA sequences you would like to use. The reason to do this is to remove low-quality nucleotides that usually are located at the two ends.  
+4: The next step is to give the output file a name. The default name is SeqInfo. Please give a meaningful name for your output file. In the Shiny main panel, you can see whether the target sequence exists in the DNA sequences. In fact, the main panel info is the same as the CSV file that you can download.
 
 ## Output files:
 You can download the pdf and CSV files.  
