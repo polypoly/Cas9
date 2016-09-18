@@ -18,8 +18,11 @@ You can download the pdf and CSV files.
   * The pdf file contains the MSA plot.
 
 ## Example:
-For target sequence, use CGCGTCTTGTCGAACGAAGCCT.
-For example DNA sequences, find them in the test.zip folder
+For target sequence, use CGCGTCTTGTCGAACGAAGCCT.  
+For example DNA sequences, find them in the test.zip folder.  
 The output should be identical to the SeqInfo.pdf and SeqInfo.R files in this repository. 
+
+## Reference:
+Bodenhofer U, Bonatesta E, Horejs-Kainrath C and Hochreiter S (2015). “msa: an R package for multiple sequence alignment.” Bioinformatics, 31(24), pp. 3997–3999.
 
 Have fun!
