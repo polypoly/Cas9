@@ -22,7 +22,7 @@ For target sequence, use CGCGTCTTGTCGAACGAAGCCT.
 For example DNA sequences, find them in the test.zip folder.  
 The output should be identical to the SeqInfo.pdf and SeqInfo.R files in this repository. 
 Inline-style: 
-![alt text](https://github.com/hsinyenwu/SeqAlign2/blob/master/SeqInfo.csv "Logo Title Text 1")
+![alt text](https://github.com/hsinyenwu/SeqAlign2/blob/master/SeqInfo.pdf "Logo Title Text 1")
 
 
 
