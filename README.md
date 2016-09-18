@@ -1,7 +1,7 @@
 ## SeqAlign2
 ### Shiny app for multiple sequence alignment.
 
-You can just run the SeqAlign2.R from R console or R studio.
+You can run the SeqAlign2.R from R console or R studio.
 
 You can use this tool to find if our CRISPR/Cas9 transgenic lines contain targeted mutations, or use it to check if your plasmids contain the sequence you want.
 
