@@ -19,7 +19,7 @@ The biallelic sequences could also be observed in sequencing chromatograms (usua
   * Note: the CSV and PDF files contain different information. 
 
 ## Output files:
-You can download the pdf and CSV files.  
+You can download both the PDF and CSV files.  
   * The CSV file contains: 
     1. The name of the input file
     2. Length of DNA sequences used in this analysis
@@ -30,7 +30,7 @@ You can download the pdf and CSV files.
 ## Example:
 For target sequence, use GTTATCGCGTCTTGTCGAAC.  
 For example DNA sequences, find them in the test.zip folder.  
-The output should be identical to the SeqInfo.pdf and SeqInfo.R files in this repository. 
+WIth the default setting, the output should be identical to the SeqInfo.pdf and SeqInfo.R files in this repository. 
 
 ## References:
 Bodenhofer U, Bonatesta E, Horejs-Kainrath C and Hochreiter S (2015). “msa: an R package for multiple sequence alignment.” Bioinformatics, 31(24), pp. 3997–3999.
