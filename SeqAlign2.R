@@ -1,3 +1,11 @@
+
+# Packages you would need:
+# source("http://www.bioconductor.org/biocLite.R")
+# biocLite("msa")
+# biocLite("Biostrings")
+# install.packages("shiny")
+# install.packages("dplyr")
+
 library(shiny)
 library(Biostrings)
 library(msa)
@@ -14,6 +22,7 @@ ui <- fluidPage(
       # Chick if you want reverse complement for the target sequence.
       checkboxInput("rev","Reverse complement", value = FALSE),
       # Input file, call it file1. Use "multiple = TRUE" to allow taking multiple files. Use "accept='.seq'" means we only take .seq file, which is the standard Sanger sequencing file containing only DNA strings.
+      helpText("Input .seq files below."),
       fileInput("file1",
                 "Choose seq files from directory",
                 multiple = TRUE,
