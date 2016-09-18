@@ -39,6 +39,17 @@ ui <- fluidPage(
 
 
 server <- function(input, output) {
+  # Read in the target sequence.
+  targetInput <- reactive({
+    # First check if we need to reverse complement of the target sequence.
+    newtext <- if(input$rev) {
+      reverseComplement(DNAString(toupper(gsub("[[:space:]]", "", input$text))))
+    }
+    else {
+      newtext <- toupper(gsub("[[:space:]]", "", input$text))
+    }
+  })
+  
   # Read the data files (many input DNA sequences) in and make a data frame.
   datasetInput <- reactive({
     inFile <- input$file1
@@ -51,14 +62,7 @@ server <- function(input, output) {
           DNASeq <- readChar(.$datapath,nchar=800)
           DNASeq <- gsub("[[:space:]]", "", DNASeq)
           DNASeq <- substring(DNASeq,first=input$start,last=input$stop)
-
-          newtext <- if(input$rev) {
-            reverseComplement(DNAString(toupper(gsub("[[:space:]]", "", input$text))))
-          }
-          else {
-            newtext <- toupper(gsub("[[:space:]]", "", input$text))
-          }
-          ContainT <- ifelse(grepl(newtext, DNASeq), TRUE, FALSE)
+          ContainT <- ifelse(grepl(targetInput(), DNASeq), TRUE, FALSE)
           DNASeqDF <- data.frame(.$name,nchar(DNASeq),ContainT,DNASeq,stringsAsFactors =F)
           colnames(DNASeqDF)=c("Name","Length","Contains target string","DNA strings")
           DNASeqDF
@@ -83,17 +87,9 @@ server <- function(input, output) {
     # DownloadHandler needs two arguments: filename and content.
      filename = paste0(input$seqName,'.pdf'),
      content = function(file) {
-       # First check if we need to reverse complement of the target sequence.
-       newtext <- if(input$rev) {
-         reverseComplement(DNAString(toupper(gsub("[[:space:]]", "", input$text))))
-       }
-       else {
-         newtext <- toupper(gsub("[[:space:]]", "", input$text))
-       }
-       
        # Make the datasetInput a dataframe and add the target sequence to make a DNAStringSet. 
        df<-as.data.frame(datasetInput())
-       DNA <- c(df[,4],newtext)
+       DNA <- c(df[,4],targetInput())
        names(DNA) <- c(df[,1],"Target Sequence")
        
        # Generate multiple sequence alignment.
@@ -117,4 +113,4 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 
 #For the example DNA sequences use:
-# CGCGTCTTGTCGAACGAAGCCT
+# GTGTGTTATCGCGTCTTGTCGAAC
