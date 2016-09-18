@@ -88,13 +88,14 @@ server <- function(input, output) {
        else {
          newtext <- input$text 
        }
+       
        # Make the datasetInput a dataframe and add the target sequence to make a DNAStringSet. 
        df<-as.data.frame(datasetInput())
        DNA <- c(df[,4],newtext)
        names(DNA) <- c(df[,1],"Target Sequence")
        DNA <- unlist(DNA)
        
-       # Generate multiple sequence alignment
+       # Generate multiple sequence alignment.
        msaPrettyPrint(
          msa(DNAStringSet(DNA),order="input")
          , file = 'report.pdf'
