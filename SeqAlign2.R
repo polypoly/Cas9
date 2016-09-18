@@ -39,7 +39,7 @@ ui <- fluidPage(
 
 
 server <- function(input, output) {
-  
+  # Read the data files (many input DNA sequences) in and make a data frame.
   datasetInput <- reactive({
     inFile <- input$file1
     if (is.null(inFile)) {
@@ -47,6 +47,7 @@ server <- function(input, output) {
     } else {
       inFile %>%
         rowwise() %>%
+        
         do({
           DNASeq <- substring(readChar(.$datapath,nchar=input$stop),input$start)
           newtext <- if(input$rev) {
@@ -63,10 +64,12 @@ server <- function(input, output) {
     }
   })
   
+  # Make the table that you see on the output page.
   output$table <- renderTable({
     datasetInput()
   })
   
+  # This allows us to download csv files. 
   output$downloadData <- downloadHandler(
     filename = function() {paste0(input$seqName,'.csv')},
     content = function(file) {
@@ -75,21 +78,23 @@ server <- function(input, output) {
 
   # Here we build the pdf file for multiple sequence alignmnet.
   output$downloadPDF = downloadHandler(
-    # downloadHandler needs two arguments: filename and content.
+    # DownloadHandler needs two arguments: filename and content.
      filename = paste0(input$seqName,'.pdf'),
      content = function(file) {
+       # First check if we need to reverse complement of the target sequence.
        newtext <- if(input$rev) {
          reverseComplement(DNAString(input$text))
        }
        else {
          newtext <- input$text 
        }
-       
+       # Make the datasetInput a dataframe and add the target sequence to make a DNAStringSet. 
        df<-as.data.frame(datasetInput())
-       DNA <- c(df[,5],newtext)
+       DNA <- c(df[,4],newtext)
        names(DNA) <- c(df[,1],"Target Sequence")
        DNA <- unlist(DNA)
        
+       # Generate multiple sequence alignment
        msaPrettyPrint(
          msa(DNAStringSet(DNA),order="input")
          , file = 'report.pdf'
@@ -103,12 +108,11 @@ server <- function(input, output) {
      },
      contentType = 'application/pdf'
    )
-  
   #you can look up the temdir with the following code
   #print(tempdir())
 }
 
 shinyApp(ui = ui, server = server)
 
-#For the sample DNA sequence use:
+#For the example DNA sequences use:
 # CGCGTCTTGTCGAACGAAGCCT
