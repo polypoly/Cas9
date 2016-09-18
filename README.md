@@ -21,8 +21,8 @@ You can download the pdf and CSV files.
 For target sequence, use CGCGTCTTGTCGAACGAAGCCT.  
 For example DNA sequences, find them in the test.zip folder.  
 The output should be identical to the SeqInfo.pdf and SeqInfo.R files in this repository. 
-Inline-style: 
-![alt text](https://github.com/hsinyenwu/SeqAlign2/blob/master/SeqInfo.pdf "Logo Title Text 1")
+
+<img src= https://github.com/hsinyenwu/SeqAlign2/blob/master/SeqInfo.pdf alt="some text"  width="4200" height="4200">
 
 
 
