@@ -22,10 +22,6 @@ For target sequence, use CGCGTCTTGTCGAACGAAGCCT.
 For example DNA sequences, find them in the test.zip folder.  
 The output should be identical to the SeqInfo.pdf and SeqInfo.R files in this repository. 
 
-<img src= https://github.com/hsinyenwu/SeqAlign2/blob/master/SeqInfo.pdf alt="some text"  width="4200" height="4200">
-
-
-
 ## Reference:
 Bodenhofer U, Bonatesta E, Horejs-Kainrath C and Hochreiter S (2015). “msa: an R package for multiple sequence alignment.” Bioinformatics, 31(24), pp. 3997–3999.
 
