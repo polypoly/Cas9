@@ -1,5 +1,5 @@
-# SeqAlign2
-Shiny app for multiple sequence alignment.
+## SeqAlign2
+# Shiny app for multiple sequence alignment.
 
 You can just run the SeqAlign2.R from R console or R studio.
 
