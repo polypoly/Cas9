@@ -1,8 +1,5 @@
 ## SeqAlign2
 ### Shiny app for multiple sequence alignment using the msa package from Bioconductor.
-RStudio version 0.99.903  
-R 3.3.1  
-Mac OS X El Capitan  
 
 You have to run the Shiny app through your default web browser (e.g. Chrome, Safari...). Do NOT use the RStudio browser.  
 
@@ -42,8 +39,11 @@ WIth the default setting, the output should be identical to the SeqInfo.pdf and 
 Bodenhofer U, Bonatesta E, Horejs-Kainrath C and Hochreiter S (2015). “msa: an R package for multiple sequence alignment.” Bioinformatics, 31(24), pp. 3997–3999.
 
 ## Version info:
-RStudio Version 0.99.903
 MSA Version 1.4.5
+RStudio version 0.99.903  
+R 3.3.1  
+Mac OS X El Capitan  
+
 
 
 Have fun!
