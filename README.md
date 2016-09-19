@@ -1,9 +1,9 @@
 ## SeqAlign2
 ### Shiny app for multiple sequence alignment using the msa package from Bioconductor.
 
-You have to run the Shiny app through your default web browser (e.g. Chrome, Safari..., see the Trick below if your RStudio does not run this app in web browser). Please do not use the RStudio pop up window.   
+You have to run the Shiny app through your default web browser (e.g. Chrome, Safari..., see the Trick below if your RStudio does not run this app in web browser). Please do not use the RStudio pop up window. It might not carry out the app properly.
 
-This shiny app requires the following libraries: 
+This shiny app requires the following four libraries: 
 shiny, Biostrings, msa, dplyr  
 
 You could use this tool to find if your CRISPR/Cas9 transgenic lines contain targeted mutations, or use it to check if your plasmids contain the sequence you want.  
