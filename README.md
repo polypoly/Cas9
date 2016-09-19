@@ -15,12 +15,13 @@ The biallelic sequences could also be observed in sequencing chromatograms (usua
 This shiny app only takes .seq files.
 
   * The user interface is self-explanatory:  
-    1. First, input the target sequence. Just copy and paste from MS word or excel sheet. Select "Reverse complement", if the target sequence needs to be reversed and complemented.
-    2. Depending on the different system, you may see "Browse..." or "Choose files" icon for the next part. If you see "Browse...", you can load the .seq files by browsing through your folders. 
-    3. If you see "Choose files", you can also select .seq files by browsing through your folders. Alternatively, you can drag multiple .seq files directly onto the "Choose files" button. It is easier this way.
-    4. You can select which range of DNA sequences you would like to use. The reason to do this is to remove low-quality nucleotides that usually are located at the two ends of Sanger sequencing reads.  
-    5. The next step is to give the output file a name. The default name is SeqInfo. Please give a meaningful name for your output file. In the Shiny main panel, you can see whether the target sequence exists in the DNA sequences. In fact, the main panel info is the same as the CSV file that you can download.
-    6. Select how the multiple sequence alignment would be arranged. "aligned" means the multiple sequence alignment would be arranged according to alignment. "input" means the multiple sequence alignment will be arranged according to the input and the target sequence is always at the bottom of the alignment. 
+    1. First, input the target sequence. Just copy and paste from MS word or excel sheet. 
+    2. Select "Reverse complement", if the target sequence needs to be reversed and complemented.
+    3. Depending on the different system, you may see "Browse..." or "Choose files" icon for the next part. If you see "Browse...", you can load the .seq files by browsing through your folders. 
+    4. If you see "Choose files", you can also select .seq files by browsing through your folders. Alternatively, you can drag multiple .seq files directly onto the "Choose files" button. It is easier this way.
+    5. You can select which range of DNA sequences you would like to use. The reason to do this is to remove low-quality nucleotides that usually are located at the two ends of Sanger sequencing reads.  
+    6. The next step is to give the output file a name. The default name is SeqInfo. Please give a meaningful name for your output file. In the Shiny main panel, you can see whether the target sequence exists in the DNA sequences. In fact, the main panel info is the same as the CSV file that you can download.
+    7. Select how the multiple sequence alignment would be arranged. "aligned" means the multiple sequence alignment would be arranged according to alignment. "input" means the multiple sequence alignment will be arranged according to the input and the target sequence is always at the bottom of the alignment. 
   * Note: the CSV and PDF files contain different information. 
 
 ## Output files:
@@ -48,7 +49,7 @@ Mac OS X El Capitan
 
 ## Trick:
 This one-file shiny app is easier to run. You do not need to set directory and can just execute the code directly. However, it seems that you can only adjust the browser setting using a two-file style shiny app. Once you run any two-file style Shiny app, you can see a drop down manual next to a green arrow. Select "Run External". That choice should make your shiny app run in your default web browser from now on.  
-![alt text](http://shiny.rstudio.com/tutorial/lesson1/images/launch-options.png "Logo Title Text 1")
+![alt text](http://shiny.rstudio.com/tutorial/lesson1/images/launch-options.png "Logo Title Text 1")  
 If you are running shiny app the first time, you could check out the Coursera course "Developing Data Products". 
 
 Have fun!
