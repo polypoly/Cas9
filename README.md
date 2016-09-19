@@ -10,12 +10,14 @@ You could use this tool to find if your CRISPR/Cas9 transgenic lines contain tar
 
 For CRISPR/Cas9 transgenic lines, we suggest designing your sequencing primers to have the same directionality as the target sequence. The reason is due to the biallelic nature of Cas9 mutants. CRISPR/Cas9-generated mutations are often small deletions or insertions (INDELs). Two different INDELs (or one wild-type and one INDEL for the two alleles) for the two alleles would lead to confusion for Sanger sequencing. By using sequencing primers with the same directionality as the target sequence, you can see the INDEL events happened exactly within the target sequences region. By using sequencing primers with the opposite directionality as the target sequence, you would not be sure where the INDEL events occur.
 
-The biallelic sequences could also be observed in sequencing chromatograms (usually saved in .ab1 format).  
+The biallelic sequences could also be observed in sequencing chromatograms (usually saved in .ab1 format).
+
+This shiny app only takes .seq files.
 
   * The user interface is self-explanatory:  
     1. First, input the target sequence. Just copy and paste from MS word or excel sheet. Select "Reverse complement", if the target sequence needs to be reversed and complemented.
-    2. Depending on the different system, you may see "Browse..." or "Choose files" icon for the next part. If you see "Browse...", you can load the files by browsing through your folders. 
-    3. If you see "Choose files", you can select .seq files by browsing through your folders. However, you can also drag multiple .seq files directly onto the "Choose files" button.
+    2. Depending on the different system, you may see "Browse..." or "Choose files" icon for the next part. If you see "Browse...", you can load the .seq files by browsing through your folders. 
+    3. If you see "Choose files", you can also select .seq files by browsing through your folders. Alternatively, you can drag multiple .seq files directly onto the "Choose files" button. It is easier this way.
     4. You can select which range of DNA sequences you would like to use. The reason to do this is to remove low-quality nucleotides that usually are located at the two ends of Sanger sequencing reads.  
     5. The next step is to give the output file a name. The default name is SeqInfo. Please give a meaningful name for your output file. In the Shiny main panel, you can see whether the target sequence exists in the DNA sequences. In fact, the main panel info is the same as the CSV file that you can download.
     6. Select how the multiple sequence alignment would be arranged. "aligned" means the multiple sequence alignment would be arranged according to alignment. "input" means the multiple sequence alignment will be arranged according to the input and the target sequence is always at the bottom of the alignment. 
