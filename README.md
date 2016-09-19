@@ -1,7 +1,7 @@
 ## SeqAlign2
 ### Shiny app for multiple sequence alignment using the msa package from Bioconductor.
 
-You have to run the Shiny app through your default web browser (e.g. Chrome, Safari...). Do NOT use the RStudio browser.  
+You have to run the Shiny app through your default web browser (e.g. Chrome, Safari..., see the Trick below if your RStudio does not run this app in web browser). Do NOT use the RStudio pop up window.   
 
 This shiny app requires the following libraries: 
 shiny, Biostrings, msa, dplyr  
@@ -46,6 +46,10 @@ RStudio version 0.99.903
 R 3.3.1  
 Mac OS X El Capitan  
 
+## Trick:
+This one-file shiny app is easier to run. You do not need to set directory and can just run. However, it seems that you can only adjust the browser setting using a two-file style shiny app. Once you run any two-file shiny app, you can see a green arrow. 
+
+![alt text](http://shiny.rstudio.com/tutorial/lesson1/images/launch-options.png "Logo Title Text 1")
 
 
 Have fun!
