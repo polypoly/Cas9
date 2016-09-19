@@ -47,9 +47,7 @@ R 3.3.1
 Mac OS X El Capitan  
 
 ## Trick:
-This one-file shiny app is easier to run. You do not need to set directory and can just run. However, it seems that you can only adjust the browser setting using a two-file style shiny app. Once you run any two-file shiny app, you can see a green arrow. 
-
+This one-file shiny app is easier to run. You do not need to set directory and can just run the code directly. However, it seems that you can only adjust the browser setting using a two-file style shiny app. Once you run any two-file style shiny app, you can see a drop down manual next to a green arrow. Select "Run External".  
 ![alt text](http://shiny.rstudio.com/tutorial/lesson1/images/launch-options.png "Logo Title Text 1")
-
 
 Have fun!
