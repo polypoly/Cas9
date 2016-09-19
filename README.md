@@ -17,7 +17,8 @@ This shiny app only takes .seq files.
   * The user interface is self-explanatory:  
     1. First, input the target sequence. Just copy and paste from MS word or excel sheet. 
     2. Select "Reverse complement", if the target sequence needs to be reversed and complemented.
-    3. Depending on the different system, you may see "Browse..." or "Choose files" icon for the next part. If you see "Browse...", you can load the .seq files by browsing through your folders.  If you see "Choose files", you can also select .seq files by browsing through your folders. Alternatively, you can drag multiple .seq files directly onto the "Choose files" button. It is easier this way.
+    3. Depending on the different system, you may see "Browse..." or "Choose files" icon for the next part. If you see "Browse...", you can load the .seq files by browsing through your folders.
+    4. If you see "Choose files", you can also select .seq files by browsing through your folders. Alternatively, you can drag multiple .seq files directly onto the "Choose files" button. It is easier this way.
     5. You can select which range of DNA sequences you would like to use. The reason to do this is to remove low-quality nucleotides that usually are located at the two ends of Sanger sequencing reads.  
     6. The next step is to give the output file a name. The default name is SeqInfo. Please give a meaningful name for your output file. In the Shiny main panel, you can see whether the target sequence exists in the DNA sequences. In fact, the main panel info is the same as the CSV file that you can download.
     7. Select how the multiple sequence alignment would be arranged. "aligned" means the multiple sequence alignment would be arranged according to alignment. "input" means the multiple sequence alignment will be arranged according to the input and the target sequence is always at the bottom of the alignment. 
@@ -40,7 +41,7 @@ WIth the default setting, the output should be identical to the SeqInfo.pdf and 
 ## References:
 Bodenhofer U, Bonatesta E, Horejs-Kainrath C and Hochreiter S (2015). “msa: an R package for multiple sequence alignment.” Bioinformatics, 31(24), pp. 3997–3999.
 
-## Version info:
+## System version info:
 MSA Version 1.4.5  
 RStudio version 0.99.903  
 R 3.3.1  
